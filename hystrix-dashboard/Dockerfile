@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-java
+FROM adoptopenjdk:11-jre-hotspot
 ADD ["target/hystrix-dashboard-0.0.1-SNAPSHOT-exec.jar", "app.jar"]
 EXPOSE 8788 8787
 ENV JAVA_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n"

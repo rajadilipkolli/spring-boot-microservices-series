@@ -2,7 +2,7 @@
 Code for SpringBoot MicroServices Blog Series
 
 ## Pre-Requisites
- - Java 8
+ - Java 11
  - Docker(https://store.docker.com/editions/community/docker-ce-desktop-windows)
  - Vault(https://www.vaultproject.io/)
  - RabbitMQ (http://www.rabbitmq.com/install-windows.html)
@@ -25,7 +25,7 @@ If above step is not working then manually add values by visiting http://127.0.0
 
 ### Start infrastructure modules in docker:
 
-`spring-boot-microservices-series> docker-compose up -d mysqldb rabbitmq setup-vault config-server service-registry hystrix-dashboard`
+`spring-boot-microservices-series> docker-compose up -d postgresql rabbitmq setup-vault config-server service-registry hystrix-dashboard`
 
 **Start each microservice either in local or in docker:**
 
@@ -33,7 +33,9 @@ If above step is not working then manually add values by visiting http://127.0.0
 
 **Docker:** `spring-boot-microservices-series> docker-compose up -d <service> --build --force-recreate`
 
-Ex: `spring-boot-microservices-series> docker-compose up -d catalog-service --build --force-recreate`
+Ex: `spring-boot-microservices-series> docker-compose up -d --build --force-recreate catalog-service inventory-service order-service shoppingcart-ui`
+
+docker-compose up -d catalog-service inventory-service order-service shoppingcart-ui
 
 
 * MySQL container:
